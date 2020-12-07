@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+# dns reverser tool
+# by EtcAug10 from hackertarget's api
+#
 
-import requests as req, os
+import os
+
+try:
+	import requests as req
+except:
+	print("Lib requests tidak ada. Menginstall..")
+	os.system("pip install requests")
 
 def ekse(target):
     r = req.get(target)
@@ -20,4 +29,3 @@ ip = input("\nMasukkan alamat IP: ")
 target = "https://api.hackertarget.com/reversedns/?q=" + ip
 
 ekse(target)
-
